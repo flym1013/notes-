@@ -9,7 +9,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+<<<<<<< HEAD
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+=======
+>>>>>>> fb3b10142baa5175612c679d2d568277356e38e7
 
 const env = require('../config/prod.env')
 

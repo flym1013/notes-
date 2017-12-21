@@ -1,9 +1,16 @@
 .DS_Store
+<<<<<<< HEAD
+=======
+node_modules/
+>>>>>>> fb3b10142baa5175612c679d2d568277356e38e7
 /dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 node_modules
+=======
+>>>>>>> fb3b10142baa5175612c679d2d568277356e38e7
 
 # Editor directories and files
 .idea

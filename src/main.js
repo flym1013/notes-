@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-Vue.config.productionTip = false
+
 // import * as filters from './filters'; // 全局vue filter
 
 Vue.config.productionTip = false
