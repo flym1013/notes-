@@ -7,7 +7,7 @@
       <ul>
           <li class="event-list" v-for="item in $root.todoItem" v-if="!item.num">
               <input type="checkbox" @click="moveTodone(item)">
-                <div>{{item.value}}</div>
+                <div class="list-value">{{item.value}}</div>
                 <button class="cancel-btn" @click="cancel(item)">取消</button>
          </li>
       </ul>
@@ -19,7 +19,7 @@
       <ul>
           <li class="event-list" v-for="item in $root.todoItem" v-if="item.num===1">
               <input type="checkbox" @click="moveTodo(item)" checked>
-                <div>{{item.value}}</div>
+                <div class="list-value">{{item.value}}</div>
                 <span class="event-time">{{item.time}}</span>
          </li>
       </ul>
@@ -31,7 +31,7 @@
       <ul>
           <li class="event-list" v-for="item in $root.todoItem" v-if="item.num===2">
               <input type="checkbox">
-                <div class="event-delete">{{item.value}}</div>
+                <div class="event-delete list-value">{{item.value}}</div>
                 <button class="cancel-btn" @click="review(item)">恢复</button>
          </li>
       </ul>
@@ -111,8 +111,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .eventContent {
+    margin-top: 50px;
         .event-tab {
             position: relative;
             height: 44px;
@@ -142,7 +143,8 @@ export default {
         }
         .event-box {
             list-style: none;
-            overflow: hidden;
+            overflow: auto;
+            max-height: 350px;
             border: {
                 left: 1px solid #eee;
                 right: 1px solid #eee;
@@ -183,6 +185,10 @@ export default {
                     line-height: 44px;
                     font-size: 12px;
                     color: #aaa;
+                }
+                .list-value{
+                  max-height: 100px;
+                  overflow: auto;
                 }
                 .event-delete {
                     text-decoration: line-through;

@@ -16,7 +16,9 @@ export default {
 
 <style lang="scss">
 .headerTop{
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 70px;
   z-index: 100;

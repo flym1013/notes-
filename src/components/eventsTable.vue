@@ -18,25 +18,27 @@
         </div>
         <input type="text" class="div-search" v-model="screen_title" placeholder="筛选关键词" @change="search">
       </div>
-      <table class="event-table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>所有事项</th>
-                <th width="">类型</th>
-                <th width="">操作</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="(item, index) in arr">
-                <td align="center">{{index + 1}}</td>
-                <td>{{item.value}}</td>
-                <td align="center">{{item.num | statusFilter}}</td>
-                <td align="center" style="font-size: 0;"><button @click="showInput(item)">编辑</button>
-                <button class="del-btn" @click="showDialog(item)">删除</button></td>
-            </tr>
-        </tbody>
-    </table>
+      <div class="fix-table">
+        <table class="event-table">
+          <thead>
+              <tr>
+                  <th width='10px'>#</th>
+                  <th>所有事项</th>
+                  <th width="70px">类型</th>
+                  <th width="62px">操作</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr v-for="(item, index) in arr">
+                  <td align="center">{{index + 1}}</td>
+                  <td>{{item.value}}</td>
+                  <td align="center">{{item.num | statusFilter}}</td>
+                  <td align="center" style="font-size: 0;"><button @click="showInput(item)">编辑</button>
+                  <button class="del-btn" @click="showDialog(item)">删除</button></td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
     </div>
     <transition name="dialog">
       <n-dialog v-show="dialog" :msg="tips" @cancel="dialog = false" @sure="sureDialog" v-model="delInfo"></n-dialog>
@@ -75,7 +77,7 @@ export default {
   },
   methods: {
     showInput (item) {
-      this.is_edit = true
+      this.is_edit = !this.is_edit
       this.info = item
     },
     editData () {
@@ -131,37 +133,48 @@ export default {
             width:100%;
             max-width:1000px;
             margin: 20px auto 70px;
-            .event-table{
-                width:100%;
-                padding:0;
-                border:{
-                    left:1px solid #eee;
-                    top:1px solid #eee;
-                }
-                border-spacing: 0px;
-                td,th{
-                    position: relative;
-                    height: 40px;
-                    min-width: 0;
-                    padding:5px 10px;
-                    box-sizing: border-box;
-                    text-overflow: ellipsis;
-                    vertical-align: middle;
-                    border:{
-                        right:1px solid #eee;
-                        bottom:1px solid #eee;
+            .fix-table{
+              max-height: 440px;
+              overflow: auto;
+              .event-table{
+                  width:100%;
+                  max-height: 570px;
+                  overflow: auto;
+                  padding:0;
+                  border:{
+                      left:1px solid #eee;
+                      top:1px solid #eee;
+                  }
+                  border-spacing: 0px;
+                  tr {
+                    max-height: 30px;
+                    max-width: 80px;
+                    overflow: auto;
+                    td,th{
+                        position: relative;
+                        height: 40px;
+                        min-width: 0;
+                        padding:5px 10px;
+                        box-sizing: border-box;
+                        text-overflow: ellipsis;
+                        vertical-align: middle;
+                        border:{
+                            right:1px solid #eee;
+                            bottom:1px solid #eee;
+                        }
                     }
-                }
-                button{
-                    padding:3px 7px;
-                    font-size: 12px;
-                    color: #fff;
-                    border:0;
-                    margin: 0 3px 3px 0;
-                    &.del-btn{
-                        background: #f57067 !important;
-                    }
-                }
+                  }
+                  button{
+                      padding:3px 7px;
+                      font-size: 12px;
+                      color: #fff;
+                      border:0;
+                      margin: 0 3px 3px 0;
+                      &.del-btn{
+                          background: #f57067 !important;
+                      }
+                  }
+              }
             }
             .edit-input{
                 position: fixed;
@@ -222,8 +235,8 @@ export default {
                         height:6px;
                         content: '';
                         border:{
-                            right:1px solid #999;
-                            bottom: 1px solid #999;
+                            // right:1px solid #999;
+                            // bottom: 1px solid #999;
                         }
                         transform: rotate(45deg);
                     }

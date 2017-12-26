@@ -20,8 +20,9 @@ export default {
       let obj = {}
       obj.value = this.content
       obj.num = 0
+      obj.numValue = '未完成'
       obj.index = 1
-      obj.time = formateTime(new Date())
+      obj.time = formateTime()
       this.$root.todoItem.push(obj)
       localStorage.setItem('todoItem', JSON.stringify(this.$root.todoItem))
       this.content = ''
@@ -35,6 +36,7 @@ export default {
         position: relative;
         padding:30px 90px 30px 0;
         font-size: 16px;
+        top: 60px;
         .n-input{
             width:100%;
             height:40px;

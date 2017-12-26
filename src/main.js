@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import XLSX from 'xlsx'
+import XLSX_SAVE from 'file-saver'
 
 // import * as filters from './filters'; // 全局vue filter
 
@@ -15,6 +17,9 @@ Vue.filter('statusFilter', (status) => {  // 启停状态过滤器
   }
   return statusMap[Number(status)]
 })
+
+Vue.prototype.$XLSX = XLSX
+Vue.prototype.$XLSX_SAVE = XLSX_SAVE
 
 /* eslint-disable no-new */
 new Vue({
