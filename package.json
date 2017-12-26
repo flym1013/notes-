@@ -34,6 +34,8 @@
     "eventsource-polyfill": "^0.9.6",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
+    "file-saver": "^1.3.3",
+    "file-saverjs": "^1.3.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
     "node-notifier": "^5.1.2",
@@ -56,8 +58,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
->>>>>>> fb3b10142baa5175612c679d2d568277356e38e7
+    "webpack-merge": "^4.1.0",
+    "xlsx": "^0.11.15"
   },
   "engines": {
     "node": ">= 4.0.0",
