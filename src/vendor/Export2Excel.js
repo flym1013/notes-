@@ -1,7 +1,7 @@
 /* eslint-disable */
 require('script-loader!file-saver');
-require('script-loader!vendor/Blob');
-require('script-loader!xlsx/dist/xlsx.core.min');
+require('script-loader!vendor/Blob.js');
+require('script-loader!xlsx/dist/xlsx.core.min.js');
 function generateArray(table) {
     var out = [];
     var rows = table.querySelectorAll('tr');
@@ -76,11 +76,6 @@ function sheet_from_array_of_arrays(data, opts) {
     }
     if (range.s.c < 10000000) ws['!ref'] = XLSX.utils.encode_range(range);
     return ws;
-    cell.s = {
-      fill: { fgColor: { rgb: "33000000"}},
-      alignment: {horizontal: "center" ,vertical: "center"},
-      ColInfo : { width: "50px"}
-    }
 }
 
 function Workbook() {

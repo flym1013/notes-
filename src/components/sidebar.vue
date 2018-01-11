@@ -78,7 +78,7 @@ export default {
         return item
       })
       require.ensure([], () => {
-        const { export_json_to_excel } = require('../vendor/Export2Excel')
+        const { export_json_to_excel } = require('../vendor/Export2Excel.js')
         const tHeader = [ '#', '类型', '时间', '所有事项' ]
         const filterVal = [ 'index', 'num', 'time', 'value' ]
         const list = this.list
@@ -89,7 +89,8 @@ export default {
     downloadData () {
       this.export2Excel()
     },
-    openThem () {}
+    openThem () {
+    }
   }
 }
 </script>
