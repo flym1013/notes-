@@ -65,6 +65,7 @@ export default {
     formatJson (filterVal, jsonData) {
       return jsonData.map(v => filterVal.map(j => v[j]))
     },
+    // Blob.js将我们要导出的数据变成二进制，而export2Excel就是可以设置导出样式以及提供导出的方法
     export2Excel () {
       this.list = Object.assign([], this.list)
       this.list = this.list.map((item, index) => {
@@ -95,7 +96,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .event-tools{
   position: fixed;
   top: 0;

@@ -23,7 +23,7 @@
           <thead>
               <tr>
                   <th width='10px'>#</th>
-                  <th>所有事项</th>
+                  <th widt="300px">所有事项</th>
                   <th width="70px">类型</th>
                   <th width="62px">操作</th>
               </tr>
@@ -111,7 +111,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .event-all{
         position: absolute;
         left:0px;
